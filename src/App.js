@@ -13,41 +13,48 @@ class App extends React.Component {
   }
 
   handleChange(event) {
-    const {name,value} = event.target;
-    this.setState({
-      [name]:value
-    })
+    const {name, value, type, checked} = event.target
 
+    //type === checkbox ? this.setState({ [name]: checked }) : this.setState({ [name]:value })
+    //const {name, value} = event.target
+    //this.setState({ [name]:value })
   }
+
   render() {
     return (
       <div className="App">
+        <form>
       <input
       type="text"
       name="firstName"
-      placehoder="first name"
+      placeholder="first name"
       onChange={this.handleChange}
+      value={this.state.firstName}
       >
       </input>
       <input 
        type="text"
        name="lastName"
-       placehoder="last name"
+       placeholder="last name"
        onChange={this.handleChange}
+       value={this.state.lastName}
        ></input>
 
        <h1>{this.state.firstName} {this.state.lastName}</h1>
 
        <textarea
-        value="yello"
+        value={"yello"}
        />
-       <p>Check this box if you like pizza</p>
-       <input
-        type="checkbox"
-        name="likesPizza"
-        checked={this.state.likesPizza}
-        onChange={this.handleChange}
-       ></input>
+      
+       <label>
+        <input
+          type="checkbox"
+          name="likesPizza"
+          checked={this.state.likesPizza}
+          onChange={this.handleChange}
+        /> Check this box if you like pizza
+       </label> 
+       </form>
       </div>
     );
   }
