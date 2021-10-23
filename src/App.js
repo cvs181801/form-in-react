@@ -6,7 +6,8 @@ class App extends React.Component {
     super()
     this.state = {
       firstName: "",
-      lastName: ""
+      lastName: "",
+      likesPizza: true
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -36,6 +37,17 @@ class App extends React.Component {
        ></input>
 
        <h1>{this.state.firstName} {this.state.lastName}</h1>
+
+       <textarea
+        value="yello"
+       />
+       <p>Check this box if you like pizza</p>
+       <input
+        type="checkbox"
+        name="likesPizza"
+        checked={this.state.likesPizza}
+        onChange={this.handleChange}
+       ></input>
       </div>
     );
   }
