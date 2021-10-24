@@ -14,7 +14,7 @@ class App extends React.Component {
 
   handleChange(event) {
     const {name, value, type, checked} = event.target
-    type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]:value })
+    type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]:value }) //we need to wrap "checkbox" in wuotes. Similar to how we do this when referencing an atribute in the DOM api syntax (example: elementName.getAttribute("class")
   }
 
   render() {
