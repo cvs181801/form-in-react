@@ -63,7 +63,7 @@ class App extends React.Component {
           checked={this.state.pineapple === "yes"}
           onChange={this.handleChange}
           value="yes"
-        /> Yes
+        /> Yes I love it
        </label> 
 
        <label>
@@ -73,8 +73,24 @@ class App extends React.Component {
           checked={this.state.pineapple === "no"}
           onChange={this.handleChange}
           value="no"
-        /> No
+        /> No it's the worst idea ever
        </label> 
+
+       <br/>
+<p>Choose your favorite kind of pizza from the drop down below!</p>
+       <select
+        value={this.state.favPizza}
+        onChange={this.handleChange}
+        name="favPizza"
+       >
+         <option>Cheese</option>
+         <option>Pepperoni</option>
+         <option>Chicken Garlic Pesto</option>
+         <option>Meat Lover</option>
+         <option>Hawaiian</option>
+         <option>Veggie Delite</option>
+         
+       </select>
        </form>
      
        <h2>{pineappleText}</h2>
