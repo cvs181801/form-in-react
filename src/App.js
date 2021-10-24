@@ -7,7 +7,8 @@ class App extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
-      likesPizza: true
+      likesPizza: true,
+      pineapple: ""
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -18,6 +19,7 @@ class App extends React.Component {
   }
 
   render() {
+    const pineappleText = this.state.pineapple === "yes" ? "You like pineapple on pizza!" : "You do not like pinapple on pizza, or you haven't answered yet"
     return (
       <div className="App">
         <form>
@@ -51,7 +53,31 @@ class App extends React.Component {
           onChange={this.handleChange}
         /> Check this box if you like pizza
        </label> 
+        <br/>
+        <p>Pineapple on pizza? </p>
+        <br/>
+       <label>
+        <input
+          type="radio"
+          name="pineapple"
+          checked={this.state.pineapple === "yes"}
+          onChange={this.handleChange}
+          value="yes"
+        /> Yes
+       </label> 
+
+       <label>
+        <input
+          type="radio"
+          name="pineapple"
+          checked={this.state.pineapple === "no"}
+          onChange={this.handleChange}
+          value="no"
+        /> No
+       </label> 
        </form>
+     
+       <h2>{pineappleText}</h2>
       </div>
     );
   }
